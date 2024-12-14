@@ -21,7 +21,8 @@ class Autor(models.Model):
 
 class Knjiga(models.Model):
     naslov = models.CharField(max_length=100)
-    authors = models.ForeignKey(Autor, default=1, on_delete=models.CASCADE)
+    autor = models.ManyToManyField('Autor')
+    izdavac = models.ForeignKey(Izdavac, default=1, on_delete=models.CASCADE)
     datum_izdavanja = models.DateField()
 
     def __str__(self):

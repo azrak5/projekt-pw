@@ -1,0 +1,15 @@
+{% block content %}
+    <h2>Knjige</h2>
+    <ul>
+        {% for knjiga in object_list %}
+            <li>
+                Naslov: {{ knjiga.naslov }}<br>
+                Autor: 
+                {% for autor in knjiga.autor.all %}
+                    <a href="autor/{{autor.ime}}">{{ autor.ime }}</a>
+                {% endfor %}<br>
+                Izdavac: <a href="izdavac/{{knjiga.izdavac.naziv}}">{{ knjiga.izdavac.naziv }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

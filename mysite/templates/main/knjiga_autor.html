@@ -1,0 +1,9 @@
+{% block content %}
+    <h2>Knjige autora: </h2>
+    <ul>
+        {% for knjiga in object_list %}
+            <li>Naslov: {{ knjiga.naslov }}</li>
+            <li>Izdavac: {{ knjiga.izdavac.naziv }}<br>
+        {% endfor %}
+    </ul>
+{% endblock %}

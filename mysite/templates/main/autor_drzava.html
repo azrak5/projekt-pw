@@ -1,0 +1,8 @@
+{% block content %}
+    <h2>Autori: </h2>
+    <ul>
+        {% for autor in object_list %}
+            <li>Ime: {{ autor.ime }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

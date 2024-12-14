@@ -1,0 +1,9 @@
+{% block content %}
+<h2>Knjiga: {{knjiga.naslov}}</h2>
+<p>Autor: 
+    {% for autor in knjiga.autor.all %}
+        {{ autor.ime }}
+    {% endfor %}</p>
+<p>Izdavac: {{ knjiga.izdavac }}</p>
+<p>Datum izdavanja: {{ knjiga.datum_izdavanja }}</p>
+{% endblock %}

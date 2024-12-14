@@ -1,0 +1,11 @@
+{% block content %}
+    <h2>Izdavaci</h2>
+    <ul>
+        {% for izdavac in object_list %}
+            <li>
+                Naziv: {{ izdavac.naziv }}<br>
+                Država: {{ izdavac.drzava }}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
