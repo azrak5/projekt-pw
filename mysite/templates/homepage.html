@@ -5,12 +5,30 @@
     <title></title>
 </head>
 <body>
-    <h1>This is our homepage</h1>
+    <h1>Početna stranica</h1>
 
     {% if user.is_authenticated %}
         <p>Vaše ime: {{ user.username }}</p>
     {% else %}
         <p>Niste prijavljeni.</p>
     {% endif %}
+
+    <h3>Izdavaci</h3>
+    <ul>
+        <li><a href="../izdavaci">Lista izdavaca</a></li>
+        <li><a href="../addizdavac">Dodaj izdavaca</a></li>
+    </ul>
+
+    <h3>Autori</h3>
+    <ul>
+        <li><a href="../autori">Lista autora</a></li>
+        <li><a href="../addautor">Dodaj autora</a></li>
+    </ul>
+
+    <h3>Knjige</h3>
+    <ul>
+        <li><a href="../knjige">Lista knjiga</a></li>
+        <li><a href="../addknjiga">Dodaj knjigu</a></li>
+    </ul>
 </body>
 </html>

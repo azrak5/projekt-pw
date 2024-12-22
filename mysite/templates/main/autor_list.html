@@ -1,11 +1,17 @@
 {% block content %}
     <h2>Autori</h2>
+    <form method="GET">
+        <input type="text" name="ime" placeholder="Pretraži autora..." value="{{ request.GET.ime }}">
+        <button type="submit">Pretraži</button>
+    </form>
     <ul>
         {% for autor in object_list %}
             <li>
                 Ime: {{ autor.ime }}<br>
                 Grad: {{ autor.grad }}<br>
-                Knjige autora <a href="../knjige/autor/{{autor.ime}}">{{ autor.ime }}</a> 
+                Knjige autora <a href="../knjige/autor/{{autor.ime}}">{{ autor.ime }}</a><br>
+                <a href="../editaut/{{ autor.id }}">Edit</a><br>
+                <a href="../deleteaut/{{ autor.id }}">Delete</a>
             </li>
         {% endfor %}
     </ul>

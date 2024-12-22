@@ -1,0 +1,56 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Knjiga</title>  
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/addknjiga/">  
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Enter Details</h3>  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Knjiga Id:</label>  
+    <div class="col-sm-4">  
+      {{ form.id }}  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Naslov:</label>  
+    <div class="col-sm-4">  
+      {{ form.naslov }}  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Autor:</label>  
+    <div class="col-sm-4">  
+      {{ form.autor }}  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Izdavac:</label>  
+    <div class="col-sm-4">  
+      {{ form.izdavac }}  
+    </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Datum izdavanja:</label>  
+    <div class="col-sm-4">  
+      {{ form.datum_izdavanja }}  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-primary">Submit</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+</body>  
+</html>  

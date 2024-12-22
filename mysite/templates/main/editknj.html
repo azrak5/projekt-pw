@@ -1,0 +1,69 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/updateknj/{{knjiga.id}}">  
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Update Details</h3>  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Knjiga Id:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="id" id="id_kid" required maxlength="20" value="{{ knjiga.id }}"/>  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Naslov:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="naslov" id="id_knaslov" required maxlength="100" value="{{ knjiga.naslov }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Autor:</label>  
+    <div class="col-sm-4">  
+        <select name="autor" id="id_kautor" multiple>
+            {% for autor in autori %}
+                <option value="{{ autor.id }}" {% if autor in knjiga.autor.all %}selected{% endif %}>
+                    {{ autor.ime }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Izdavač:</label>  
+    <div class="col-sm-4">  
+        <select name="izdavac" id="id_kizdavac">
+            {% for izdavac in izdavaci %}
+                <option value="{{ izdavac.id }}" {% if izdavac == knjiga.izdavac %}selected{% endif %}>
+                    {{ izdavac.naziv }}
+                </option>
+            {% endfor %}
+        </select>
+    </div> 
+    </div> 
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Datum izdavanja:</label>  
+    <div class="col-sm-4">  
+        <input type="date" name="datum_izdavanja" id="id_kdatum" value="{{ knjiga.datum_izdavanja }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-success">Update</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+</body>  
+</html>  

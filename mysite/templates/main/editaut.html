@@ -1,0 +1,57 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <title>Index</title>  
+</head>  
+<body>  
+<form method="POST" class="post-form" action="/updateaut/{{autor.id}}">  
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Update Details</h3>  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Autor Id:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="id" id="id_aid" required maxlength="20" value="{{ autor.id }}"/>  
+    </div>  
+  </div>  
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Ime:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="ime" id="id_aime" required maxlength="30" value="{{ autor.ime }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Adresa:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="adresa" id="id_aadresa" required maxlength="50" value="{{ autor.adresa }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Grad:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="grad" id="id_agrad" required maxlength="60" value="{{ autor.grad }}" />  
+    </div>  
+    </div>
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Država:</label>  
+    <div class="col-sm-4">  
+        <input type="text" name="drzava" id="id_adrzava" required maxlength="50" value="{{ autor.drzava }}" />  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-success">Update</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+</body>  
+</html>  
