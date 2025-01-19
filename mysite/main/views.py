@@ -6,6 +6,8 @@ from django.contrib.auth import authenticate, login
 from django.views.generic import ListView, DetailView
 from main.forms import *
 from main.models import *
+from rest_framework import viewsets, permissions
+from .serializers import KnjigaSerializer, IzdavacSerializer, AutorSerializer
 
 ## Create your views here.
 def homepage(request):
@@ -190,3 +192,18 @@ def deleteknj(request, id):
     knjiga = Knjiga.objects.get(id=id)
     knjiga.delete()
     return redirect("../knjige/")
+
+class KnjigaViewSet(viewsets.ModelViewSet):
+    queryset = Knjiga.objects.all()
+    serializer_class = KnjigaSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class IzdavacViewSet(viewsets.ModelViewSet):
+    queryset = Izdavac.objects.all()
+    serializer_class = IzdavacSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+class AutorViewSet(viewsets.ModelViewSet):
+    queryset = Autor.objects.all()
+    serializer_class = AutorSerializer
+    permission_classes = [permissions.IsAuthenticated]
