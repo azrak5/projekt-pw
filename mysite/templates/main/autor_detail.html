@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Autor</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
 {% block content %}
 <h2>Autor: {{autor.ime}}</h2>
 <p>Id: {{autor.id}}</p>
@@ -5,3 +14,4 @@
 <p>Grad: {{ autor.grad }}</p>
 <p>Drzava: {{ autor.drzava }}</p>
 {% endblock %}
+</body>

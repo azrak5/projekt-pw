@@ -3,6 +3,8 @@
 <head>  
     <meta charset="UTF-8">  
     <title>Index</title>  
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>  
 <body>  
 <form method="POST" class="post-form" action="/updateknj/{{knjiga.id}}">  

@@ -2,21 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Početna stranica</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
 </head>
 <body>
-    <h1>Početna stranica</h1>
+    <div class="container">
+    <h1>Početna stranica</h1><hr>
 
+    <div class="auth">
     {% if user.is_authenticated %}
         <p>Vaše ime: {{ user.username }}</p>
     {% else %}
         <p>Niste prijavljeni.</p>
+        <a href="{% url 'login' %}"><button>Prijava</button></a>
     {% endif %}
+    </div>
 
-    <h3>Izdavaci</h3>
+    <h3>Izdavači</h3>
     <ul>
-        <li><a href="../izdavaci">Lista izdavaca</a></li>
-        <li><a href="../addizdavac">Dodaj izdavaca</a></li>
+        <li><a href="../izdavaci">Lista izdavača</a></li>
+        <li><a href="../addizdavac">Dodaj izdavača</a></li>
     </ul>
 
     <h3>Autori</h3>
@@ -30,5 +36,6 @@
         <li><a href="../knjige">Lista knjiga</a></li>
         <li><a href="../addknjiga">Dodaj knjigu</a></li>
     </ul>
+    </div>
 </body>
 </html>

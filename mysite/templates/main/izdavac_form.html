@@ -2,7 +2,9 @@
 <html lang="en">  
 <head>  
     <meta charset="UTF-8">  
-    <title>Izdavac</title>  
+    <title>Izdavac</title> 
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"> 
 </head>  
 <body>  
 <form method="POST" class="post-form" action="/addizdavac/">  
@@ -12,11 +14,11 @@
     <div class="form-group row">  
     <label class="col-sm-1 col-form-label"></label>  
     <div class="col-sm-4">  
-    <h3>Enter Details</h3>  
+    <h3>Unesite izdavača</h3>  
     </div>  
   </div>  
     <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Izdavac Id:</label>  
+    <label class="col-sm-2 col-form-label">Izdavač Id:</label>  
     <div class="col-sm-4">  
       {{ form.id }}  
     </div>  
@@ -37,9 +39,10 @@
     <label class="col-sm-2 col-form-label">Grad:</label>  
     <div class="col-sm-4">  
       {{ form.grad }}  
-    </div>  
+    </div> 
+    </div> 
     <div class="form-group row">  
-    <label class="col-sm-2 col-form-label">Drzava:</label>  
+    <label class="col-sm-2 col-form-label">Država:</label>  
     <div class="col-sm-4">  
       {{ form.drzava }}  
     </div>  

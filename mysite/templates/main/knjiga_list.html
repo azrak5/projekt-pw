@@ -1,21 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Knjige</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+</head>
+
+<body>
+    <div class="container">
 {% block content %}
     <h2>Knjige</h2>
     <form method="GET">
         <input type="text" name="autor" placeholder="Pretraži po autoru..." value="{{ request.GET.autor }}">
         <button type="submit">Pretraži</button>
     </form>
-    <ul>
+    <ol>
         {% for knjiga in object_list %}
             <li>
-                Naslov: {{ knjiga.naslov }}<br>
-                Autor: 
+                <strong>Naslov:</strong> {{ knjiga.naslov }}<br>
+                <strong>Autor:</strong> 
                 {% for autor in knjiga.autor.all %}
                     <a href="autor/{{autor.ime}}">{{ autor.ime }}</a>
                 {% endfor %}<br>
-                Izdavac: <a href="izdavac/{{knjiga.izdavac.naziv}}">{{ knjiga.izdavac.naziv }}</a><br>
-                <a href="../editknj/{{ knjiga.id }}">Edit</a><br>
-                <a href="../deleteknj/{{ knjiga.id }}">Delete</a>
+                <strong>Izdavac:</strong> <a href="izdavac/{{knjiga.izdavac.naziv}}">{{ knjiga.izdavac.naziv }}</a><br>
+
+                <div class="edit-delete">
+                <a href="../editknj/{{ knjiga.id }}">Uredi</a><br>
+                <a href="../deleteknj/{{ knjiga.id }}" style="color: red;">Obriši</a>
+                </div>
             </li>
         {% endfor %}
-    </ul>
+    </ol>
 {% endblock %}
+    </div>
+</body>
